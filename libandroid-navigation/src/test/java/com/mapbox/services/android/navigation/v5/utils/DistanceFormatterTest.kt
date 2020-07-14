@@ -40,10 +40,10 @@ class DistanceFormatterTest {
         MockKAnnotations.init(this)
         every { context.resources } returns resources
         every { configuration.locales } returns LocaleList.getDefault()
-        every { context.getString(R.string.kilometers) } returns ("km")
-        every { context.getString(R.string.meters) } returns ("m")
-        every { context.getString(R.string.miles) } returns ("mi")
-        every { context.getString(R.string.feet) } returns ("ft")
+        every { context.getString(R.string.mapbox_kilometers) } returns ("km")
+        every { context.getString(R.string.mapbox_meters) } returns ("m")
+        every { context.getString(R.string.mapbox_miles) } returns ("mi")
+        every { context.getString(R.string.mapbox_feet) } returns ("ft")
     }
 
     @Test

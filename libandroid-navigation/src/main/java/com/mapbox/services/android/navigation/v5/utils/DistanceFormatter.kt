@@ -69,10 +69,10 @@ class DistanceFormatter(
     }
 
     init {
-        unitStrings[UNIT_KILOMETERS] = context.getString(R.string.kilometers)
-        unitStrings[UNIT_METERS] = context.getString(R.string.meters)
-        unitStrings[UNIT_MILES] = context.getString(R.string.miles)
-        unitStrings[UNIT_FEET] = context.getString(R.string.feet)
+        unitStrings[UNIT_KILOMETERS] = context.getString(R.string.mapbox_kilometers)
+        unitStrings[UNIT_METERS] = context.getString(R.string.mapbox_meters)
+        unitStrings[UNIT_MILES] = context.getString(R.string.mapbox_miles)
+        unitStrings[UNIT_FEET] = context.getString(R.string.mapbox_feet)
 
         val locale = if (language == null) {
             context.inferDeviceLocale()
