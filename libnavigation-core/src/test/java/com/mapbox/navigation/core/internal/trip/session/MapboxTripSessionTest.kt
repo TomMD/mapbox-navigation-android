@@ -100,7 +100,8 @@ class MapboxTripSessionTest {
             locationEngine,
             navigatorPredictionMillis,
             navigator,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
 
         coEvery { navigator.getStatus(any()) } returns tripStatus
@@ -311,7 +312,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val observer: RouteProgressObserver = mockk(relaxUnitFun = true)
@@ -332,7 +334,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val observer: RouteProgressObserver = mockk(relaxUnitFun = true)
@@ -352,7 +355,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         updateLocationAndJoin()
@@ -372,7 +376,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val observer: RouteProgressObserver = mockk(relaxUnitFun = true)
@@ -392,7 +397,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val observer: RouteProgressObserver = mockk(relaxUnitFun = true)
@@ -413,7 +419,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val observer: LocationObserver = mockk(relaxUnitFun = true)
@@ -433,7 +440,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         updateLocationAndJoin()
@@ -453,7 +461,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val observer: LocationObserver = mockk(relaxUnitFun = true)
@@ -571,7 +580,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val routeProgressObserver: RouteProgressObserver = mockk(relaxUnitFun = true)
@@ -592,7 +602,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         val offRouteObserver: OffRouteObserver = mockk(relaxUnitFun = true)
@@ -629,6 +640,7 @@ class MapboxTripSessionTest {
         val bannerInstructions: BannerInstructions = mockk()
 
         every { routeProgress.bannerInstructions } returns bannerInstructions
+        every { routeProgress.bannerInstructions?.view() } returns null
         every { routeProgress.voiceInstructions } returns null
         every { tripStatus.offRoute } returns true
 
@@ -638,7 +650,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         tripSession.registerBannerInstructionsObserver(bannerInstructionsObserver)
@@ -671,7 +684,8 @@ class MapboxTripSessionTest {
             navigatorPredictionMillis,
             navigator,
             ThreadController,
-            logger = logger
+            logger = logger,
+            accessToken = "pk.1234"
         )
         tripSession.start()
         tripSession.registerVoiceInstructionsObserver(voiceInstructionsObserver)
