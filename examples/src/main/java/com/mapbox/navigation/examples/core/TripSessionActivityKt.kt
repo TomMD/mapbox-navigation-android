@@ -22,6 +22,7 @@ import com.mapbox.navigation.core.internal.trip.service.MapboxTripService
 import com.mapbox.navigation.core.internal.trip.session.MapboxTripSession
 import com.mapbox.navigation.core.trip.session.LocationObserver
 import com.mapbox.navigation.examples.R
+import com.mapbox.navigation.examples.utils.Utils
 import com.mapbox.navigation.trip.notification.internal.MapboxTripNotification
 import kotlinx.android.synthetic.main.activity_trip_session.*
 import timber.log.Timber
@@ -110,7 +111,8 @@ class TripSessionActivityKt : AppCompatActivity(), OnMapReadyCallback {
             ),
             LocationEngineProvider.getBestLocationEngine(applicationContext),
             NAVIGATOR_POLLING_DELAY,
-            logger = MapboxLogger
+            logger = MapboxLogger,
+            accessToken = Utils.getMapboxAccessToken(this)
         )
     }
 
